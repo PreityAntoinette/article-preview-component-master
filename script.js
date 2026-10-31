@@ -1,5 +1,7 @@
 const button = document.getElementById('share');
+const speechBubble = document.getElementById('speechBubble')
 
-button.onclick = function(){
-    console.log('You clicked me!');
-}
+button.addEventListener('click', (event) => {
+    speechBubble.classList.toggle('show');
+    event.stopPropagation();
+});

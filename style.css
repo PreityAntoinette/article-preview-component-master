@@ -61,9 +61,38 @@ body{
 .button-container {
     display: flex;
     align-items: center;
-    margin-left: auto;       /* Keeps it vertically aligned */
+    margin-left: auto; 
+    position: relative;
 }
-
+.speech-bubble{
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.speech-bubble::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+}
+.speech-bubble.show{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-4px);
+}
 button {
     display: block;
     margin-left: auto;         /* Automatically pushes the button to the far right */
